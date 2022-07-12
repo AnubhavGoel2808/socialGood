@@ -30,9 +30,7 @@ function VolunteerPage() {
         setVolunteerInfo(volunteerInfo);
         setAllPosts(allPosts);
         const interests = volunteerInfo.areaOfInterest;
-        const matchPosts = allPosts.filter((post) => {
-          return interests.includes(post.domain);
-        });
+        const matchPosts = allPosts;
         const updatedPosts = matchPosts.map((post) => {
           const appliedVolunteers = post.appliedVolunteers;
           const foundVolunteer = appliedVolunteers.find(

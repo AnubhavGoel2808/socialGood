@@ -38,7 +38,7 @@ const get = require('lodash.get');
 const intersection = require('lodash.intersection'); 
 const User = require('../models').user;
 const token = require('../constants/token'); 
-const secret = JSON.parse(process.env.JWT_SECRET);
+// const secret = "DSJHJKDBKJDBJK"
 
 const authorize = (roles) => {
   if (typeof roles === 'string') {
@@ -47,7 +47,7 @@ const authorize = (roles) => {
   console.log(roles);
   return [
     // authenticate JWT token and attach user to request object (req.user)
-    expressJwt({ secret: secret.key, algorithms: [secret.type] }),
+    expressJwt({ secret: 'DJHFJDHGJHD', algorithms: ["HS256"] }),
 
     async (req, res, next) => {
       // console.log(req.user);
